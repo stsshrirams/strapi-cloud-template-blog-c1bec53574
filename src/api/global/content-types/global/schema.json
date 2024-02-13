@@ -12,9 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "siteName": {
+    "TBS": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": false,
+      "default": "Test",
+      "regex": "Tester"
     },
     "favicon": {
       "type": "media",
@@ -28,12 +31,18 @@
     },
     "siteDescription": {
       "type": "text",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "defaultSeo": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "tbstest": {
+      "type": "email",
+      "required": true,
+      "unique": true
     }
   }
 }
