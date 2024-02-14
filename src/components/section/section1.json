@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_section1s",
+  "info": {
+    "displayName": "section1",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "H2": {
+      "type": "string"
+    },
+    "listitems": {
+      "type": "blocks"
+    }
+  }
+}

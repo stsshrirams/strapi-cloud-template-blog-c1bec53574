@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "navbars",
+  "info": {
+    "singularName": "navbar",
+    "pluralName": "navbars",
+    "displayName": "Navbar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Menu1": {
+      "type": "string",
+      "required": true
+    },
+    "Menu2": {
+      "type": "string"
+    },
+    "Menu3": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

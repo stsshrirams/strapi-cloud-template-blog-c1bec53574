@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SectionSection1 extends Schema.Component {
+  collectionName: 'components_section_section1s';
+  info: {
+    displayName: 'section1';
+    icon: 'archive';
+    description: '';
+  };
+  attributes: {
+    H2: Attribute.String;
+    listitems: Attribute.Blocks;
+  };
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +78,7 @@ export interface SharedSlider extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'section.section1': SectionSection1;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

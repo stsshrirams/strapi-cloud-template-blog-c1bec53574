@@ -786,7 +786,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
   info: {
     singularName: 'about';
     pluralName: 'abouts';
-    displayName: 'About';
+    displayName: 'Home';
     description: 'Write about yourself and the content you create';
   };
   options: {
@@ -802,6 +802,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
     irs: Attribute.Media & Attribute.Required;
     soc: Attribute.Media & Attribute.Required;
     soc2: Attribute.Media;
+    sectionItem: Attribute.Component<'section.section1', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -977,6 +978,39 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
 }
 
+export interface ApiNavbarNavbar extends Schema.SingleType {
+  collectionName: 'navbars';
+  info: {
+    singularName: 'navbar';
+    pluralName: 'navbars';
+    displayName: 'Navbar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Menu1: Attribute.String & Attribute.Required;
+    Menu2: Attribute.String;
+    Menu3: Attribute.String;
+    logo: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1000,6 +1034,7 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::navbar.navbar': ApiNavbarNavbar;
     }
   }
 }

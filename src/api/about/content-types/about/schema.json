@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "About",
+    "displayName": "Home",
     "description": "Write about yourself and the content you create"
   },
   "options": {
@@ -55,14 +55,20 @@
       ]
     },
     "soc2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "sectionItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "section.section1"
     }
   }
 }
